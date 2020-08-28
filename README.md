@@ -4,8 +4,7 @@ A startup called Sparkify wants to analyze the data they've been collecting on s
 The analysis team is particularly interested in understanding what songs users are listening to. Currently, there is no easy way to query the data to generate 
 the results, since the data reside in a directory of CSV files on user activity on the app.
 
-They'd like a data engineer to create an Apache Cassandra database which can create queries on song play data to answer the questions. 
-The goal of this project is to create a Cassandra database for this analysis.
+For this project, we'll create an Apache Cassandra database which and create queries on song play data to answer some business questions. 
 
 The purpose of the NoSQL database is to answer queries on song play data. The data model includes a table for each of the following queries:
 
@@ -15,10 +14,18 @@ The purpose of the NoSQL database is to answer queries on song play data. The da
     
 3. Give me every user name (first and last) in my music app history who listened to the song 'All Hands Against His Own'
 
+### Requirements for running locally
+- Python3 
+- Jupiter notebook
 
-## Data pre-processing, ETL pipeline, and data modeling
+### Database keyspace design
+Below is the database keyspace for the Sparkify databse:
 
-The data are stored as a collection of csv files partitioned by date. The ETL pipeline and data modeling are written in a single jupyter notebook, **Project_1B_Project_Template.ipynb**.
+![Screenshot](img2.png)
+
+### Data pre-processing, ETL pipeline, and data modeling
+
+The data are stored as a collection of csv files partitioned by date. The ETL pipeline and data modeling are written in a single jupyter notebook, **etl_cassandra.ipynb**.
 
 ETL copies data from the date-partitioned csv files to a single csv file **event_datafile_new.csv** which is used to populate the denormalized Cassandra tables optimised for the 3 queries above. The 3 tables in the model are named after the song play query they are created to solve:
 
