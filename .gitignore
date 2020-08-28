@@ -1,4 +1,5 @@
 # Add ignored files
 .DS_Store
-.ipynb_checkpoints/Project_1B_ Project_Template-checkpoint.ipynb
+.ipynb_checkpoints/
+
 
